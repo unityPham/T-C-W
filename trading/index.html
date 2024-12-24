@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>    
-<meta http-equiv="Cache-control" content="no-cache">
+  <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Trade Coin Bot</title>
@@ -10,6 +9,16 @@
     <link rel="manifest" href="manifest.webmanifest">
   </head>
   <body>
+    <script>
+       const currentTime = new Date().getTime();
+     const urlParams = new URLSearchParams(location.search);
+    const queryTime = urlParams.get('t');
+   if (!queryTime || currentTime - parseInt(queryTime) > 60000) {
+        const updatedUrl = `${location.pathname}?t=${currentTime}`;
+        history.replaceState(null, "", updatedUrl);
+        console.log("Updated index.html URL to ensure latest version:", updatedUrl);
+    }</script>
+
     <div id="unity-container">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -57,7 +66,7 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build.2024.12.24.594";
+      var buildUrl = "Build.2024.12.24.1365";
       var loaderUrl = buildUrl + "/trading.loader.js";
       var config = {
         dataUrl: buildUrl + "/trading.data",
@@ -66,7 +75,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SliBox",
         productName: "Trade Coin Bot",
-        productVersion: "2024.12.24.594",
+        productVersion: "2024.12.24.1365",
         showBanner: unityShowBanner,
       };
 
@@ -100,8 +109,5 @@
       };
       document.body.appendChild(script);
     </script>
-  <script>    try{cache.delete(location.href)}
-      catch{}
-     </script>
-</body>
+  </body>
 </html>
