@@ -17,7 +17,8 @@
         const updatedUrl = `${location.pathname}?t=${currentTime}`;
         history.replaceState(null, "", updatedUrl);
         console.log("Updated index.html URL to ensure latest version:", updatedUrl);
-    }</script>
+    }
+</script>
 
     <div id="unity-container">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
@@ -72,7 +73,7 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build.2024.12.25.561";
+      var buildUrl = "Build.2024.12.25.1055";
       var loaderUrl = buildUrl + "/trading.loader.js";
       var config = {
         dataUrl: buildUrl + "/trading.data",
@@ -81,7 +82,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SliBox",
         productName: "Trade Coin Bot",
-        productVersion: "2024.12.25.561",
+        productVersion: "2024.12.25.1055",
         showBanner: unityShowBanner,
       };
 
