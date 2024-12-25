@@ -1,9 +1,9 @@
-const cacheName = "SliBox-Trade Coin Bot-2024.12.25.463";
+const cacheName = "SliBox-Trade Coin Bot-2024.12.25.561";
 const contentToCache = [
-    "Build/trading.loader.js",
-    "Build/trading.framework.js",
-    "Build/trading.data",
-    "Build/trading.wasm",
+    "Build.2024.12.25.561/trading.loader.js",
+    "Build.2024.12.25.561/trading.framework.js",
+    "Build.2024.12.25.561/trading.data",
+    "Build.2024.12.25.561/trading.wasm",
     "TemplateData/style.css"
 
 ];

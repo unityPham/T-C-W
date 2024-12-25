@@ -32,7 +32,13 @@
     <script>
       window.addEventListener("load", function () {
         if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("ServiceWorker.js");
+          navigator.serviceWorker.register("ServiceWorker.js", {
+          updateViaCache: "none"
+        }).then(registration => {
+          console.log("Service Worker registered with scope:", registration.scope);
+        }).catch(error => {
+          console.error("Service Worker registration failed:", error);
+        });
         }
       });
 
@@ -66,7 +72,7 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build.2024.12.25.463";
+      var buildUrl = "Build.2024.12.25.561";
       var loaderUrl = buildUrl + "/trading.loader.js";
       var config = {
         dataUrl: buildUrl + "/trading.data",
@@ -75,7 +81,7 @@
         streamingAssetsUrl: "StreamingAssets",
         companyName: "SliBox",
         productName: "Trade Coin Bot",
-        productVersion: "2024.12.25.463",
+        productVersion: "2024.12.25.561",
         showBanner: unityShowBanner,
       };
 
