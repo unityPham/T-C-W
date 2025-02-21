@@ -34,8 +34,8 @@
         .avatar {
             position: absolute;
             top: 20px;
-            width: 200px;
-            height: 200px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 3px solid #ff6f61;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -183,6 +183,7 @@
         let currentContentIndex = 0;
 
         function showMessage() {
+            window.buttonTime =  Date.now();
             const container = document.querySelector('.container > div');
             container.innerHTML = `
                 <p>Bạn dược sĩ có thể đồng ý làm người yêu mình không ạ! ❤️</p>
@@ -201,6 +202,7 @@
         }
 
         function showPopup() {
+            if(window.buttonTime + 300 >  Date.now()) return;
             hiddnMessage();
             document.getElementById('popup').classList.remove('hidden');
             updatePopupContent();
@@ -228,6 +230,7 @@
         }
 
         function moveButton(event) {
+            window.buttonTime =  Date.now();
             const button = event.target;
             const buttonWidth = button.offsetWidth;
             const buttonHeight = button.offsetHeight;
