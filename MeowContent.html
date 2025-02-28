@@ -128,29 +128,40 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
         }
     </style>
 </head>
 
 <body>
-    <img src="https://scontent-nrt1-2.xx.fbcdn.net/v/t39.30808-6/438300765_2077023556003299_4038412896275086027_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGAyW_Wdg1MfqWwaBqWDNddJeocQZx8lEsl6hxBnHyUSzR8EbdL3b9w-TpSw0dWRju84AEurGEqtwQiAYXz7fG5&_nc_ohc=yYFF41JFomYQ7kNvgFC5V12&_nc_oc=AdjHueC7Qhsv8QB4JSYD1GTPWgbR-LUNW16SSH1GCfHKHn6C-mc_pEWWxyV2KIMVvso&_nc_zt=23&_nc_ht=scontent-nrt1-2.xx&_nc_gid=AAu-7jbbmUdVVbikReq1-Sa&oh=00_AYD4mFcEmDAY1m0ELuWJlUsA1nER8RRvfXpWduMERL1NjQ&oe=67BE6279"
-     alt="Avatar của bạn" class="avatar left">
-    <img src="https://scontent-nrt1-2.xx.fbcdn.net/v/t39.30808-6/475104683_3969180426696632_627240297991776523_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFV2xudydXVmHodSQ9FCLLz4uGy3vaJdsni4bLe9ol2ycnnCAS17Je43e059nn6Wc2FbSQpj_cjqKWZNkCEF3RY&_nc_ohc=IAq76OSZh6IQ7kNvgG29uE9&_nc_oc=Adio4Y_CFT4Rz1KUz9ALu0bEmnJLvkTjBMP7ub9jbFzRy373Y1iyDEOLq95X3CgPvlc&_nc_zt=23&_nc_ht=scontent-nrt1-2.xx&_nc_gid=AGroEpVEfdj75ivcLL0s5Hm&oh=00_AYD0saItg0tbO70uM-Zp9jn41q5KxWM8k58e6jAfUvYP-A&oe=67BE8DE0"
-     alt="Avatar người yêu" class="avatar right">
+    <img id="avatar1" src="/IT.jpg" alt="Avatar của bạn" class="avatar left">
+    <img id="avatar2" src="/Meow.jpg" alt="Avatar người yêu" class="avatar right">
+
 
     <div class="container">
         <h1>Gửi đến tình yêu của mình ❤️</h1>
         <div>
             <p>
-                Bạn iu ơi, từ ngày bên bạn, trái tim mình như được thắp sáng. 
-                Bạn là người khiến mình cảm thấy hạnh phúc và trọn vẹn. 
+                Bạn iu ơi, từ ngày bên bạn, trái tim mình như được thắp sáng.
+                Bạn là người khiến mình cảm thấy hạnh phúc và trọn vẹn.
                 Mình có điều quan trọng này muốn nói với bạn...
             </p>
             <button onclick="showMessage()">Nhấn vào đây bạn nhó!</button>
@@ -169,6 +180,8 @@
     </div>
 
     <script>
+
+
         const contents = [
             "Cảm ơn bạn iu đã đồng ý yêu mình! ❤️",
             "Hôm nay mình đã vô tình làm bạn yêu buồn. Mình xin lỗi bạn nhiều nhiều nhiều ạ.",
@@ -184,7 +197,7 @@
         let currentContentIndex = 0;
 
         function showMessage() {
-            window.buttonTime =  Date.now();
+            window.buttonTime = Date.now();
             const container = document.querySelector('.container > div');
             container.innerHTML = `
                 <p>Bạn dược sĩ có thể đồng ý làm người yêu mình không ạ! ❤️</p>
@@ -203,7 +216,7 @@
         }
 
         function showPopup() {
-            if(window.buttonTime + 300 >  Date.now()) return;
+            if (window.buttonTime + 300 > Date.now()) return;
             hiddnMessage();
             document.getElementById('popup').classList.remove('hidden');
             updatePopupContent();
@@ -231,7 +244,7 @@
         }
 
         function moveButton(event) {
-            window.buttonTime =  Date.now();
+            window.buttonTime = Date.now();
             const button = event.target;
             const buttonWidth = button.offsetWidth;
             const buttonHeight = button.offsetHeight;
